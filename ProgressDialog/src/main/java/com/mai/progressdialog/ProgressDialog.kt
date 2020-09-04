@@ -13,6 +13,18 @@ class ProgressDialogmai(var context:Context,var inflater: LayoutInflater) {
     lateinit var dialog: Dialog
     lateinit var view2: View
     var width=0
+    class ProgressDialogmai constructor(var context:Context,var inflater: LayoutInflater)
+    {
+
+    }
+    init {
+        dialog = Dialog(context)
+        view2 = inflater.inflate(R.layout.progress_dialog, null)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setContentView(view2)
+        width = (context.resources.displayMetrics.widthPixels * 0.8).toInt()
+        dialog.window!!.setLayout(width, LinearLayout.LayoutParams.WRAP_CONTENT)
+    }
     fun  maiDialog(): Dialog {
         dialog = Dialog(context)
         view2 = inflater.inflate(R.layout.progress_dialog, null)
@@ -21,6 +33,14 @@ class ProgressDialogmai(var context:Context,var inflater: LayoutInflater) {
         width = (context.resources.displayMetrics.widthPixels * 0.8).toInt()
         dialog.window!!.setLayout(width, LinearLayout.LayoutParams.WRAP_CONTENT)
         return dialog
+    }
+    fun showmai()
+    {
+        dialog.show()
+    }
+    fun dissmismai()
+    {
+        dialog.dismiss()
     }
     fun setDialogWidth(size:Double)
     {
