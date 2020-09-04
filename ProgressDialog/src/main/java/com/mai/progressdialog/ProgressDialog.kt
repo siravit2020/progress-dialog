@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 
-class ProgressDialog(var context:Context,var inflater: LayoutInflater) {
+class ProgressDialogmai(var context:Context,var inflater: LayoutInflater) {
     lateinit var dialog: Dialog
     lateinit var view2: View
     var width=0
