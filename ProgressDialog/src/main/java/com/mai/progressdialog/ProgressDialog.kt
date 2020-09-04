@@ -26,14 +26,6 @@ class ProgressDialogmai(var context:Context,var inflater: LayoutInflater) {
     {
         width = (context.resources.displayMetrics.widthPixels * size).toInt()
     }
-    fun show()
-    {
-        dialog.show()
-    }
-    fun dismiss()
-    {
-        dialog.dismiss()
-    }
     fun setText(str:String)
     {
         view2.findViewById<TextView>(R.id.textbar).text = str
