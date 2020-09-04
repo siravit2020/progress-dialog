@@ -45,6 +45,7 @@ class ProgressDialogmai(var context:Context,var inflater: LayoutInflater) {
     fun setDialogWidth(size:Double)
     {
         width = (context.resources.displayMetrics.widthPixels * size).toInt()
+        dialog.window!!.setLayout(width, LinearLayout.LayoutParams.WRAP_CONTENT)
     }
     fun setText(str:String)
     {
