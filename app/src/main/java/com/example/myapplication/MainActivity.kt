@@ -11,8 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val d = maiProgressDialog(this)
+
         d.setText("Loading...")
         d.setCorner(100)
+        d.setColorDialog(R.color.colorAccent)
         d.returnDialog().show()
 
 

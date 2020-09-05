@@ -50,6 +50,6 @@ public class maiProgressDialog {
     public void setColorDialog(int color)
     {
         GradientDrawable shape = (GradientDrawable) view2.findViewById(R.id.layoutCorner).getBackground();
-        shape.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+        shape.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
     }
 }
