@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         val d = maiProgressDialog(this)
 
         d.setText("Loading...")
-        d.setCorner(100)
-        d.setColorDialog(R.color.colorAccent)
+        d.setCorner(30)
+       // d.setColorDialog(R.color.colorAccent)
         d.returnDialog().show()
 
 

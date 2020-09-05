@@ -7,10 +7,14 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 public class maiProgressDialog {
     private Dialog dialog;
@@ -42,14 +46,15 @@ public class maiProgressDialog {
     }
     public void setCorner(int dp)
     {
-        float scale = context.getResources().getDisplayMetrics().scaledDensity;
-        float mTextSizeP = (dp / scale);
+        float twelveDp = TypedValue.applyDimension( TypedValue.COMPLEX_UNIT_DIP, dp,
+                context.getResources().getDisplayMetrics() );
         GradientDrawable shape = (GradientDrawable) view2.findViewById(R.id.layoutCorner).getBackground();
-        shape.setCornerRadius(mTextSizeP);
+        shape.setCornerRadius(twelveDp);
     }
     public void setColorDialog(int color)
     {
         GradientDrawable shape = (GradientDrawable) view2.findViewById(R.id.layoutCorner).getBackground();
-        shape.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+        //shape.setTint(ContextCompat.getColor(context, color));
+        shape.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
     }
 }
