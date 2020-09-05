@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +55,9 @@ public class maiProgressDialog {
     public void setColorDialog(int color)
     {
         GradientDrawable shape = (GradientDrawable) view2.findViewById(R.id.layoutCorner).getBackground();
-        //shape.setTint(ContextCompat.getColor(context, color));
-        shape.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            shape.setTint(ContextCompat.getColor(context, color));
+        }
+        //shape.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
     }
 }
