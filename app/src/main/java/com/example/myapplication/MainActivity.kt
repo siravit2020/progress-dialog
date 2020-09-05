@@ -3,17 +3,18 @@ package com.example.myapplication
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.mai.progressdialog.ProgressDialogmai
+import com.mai.progressdialog.maiProgressDialog
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val d = ProgressDialogmai(this,layoutInflater)
-       // d.maiDialog()
-        // d.setDialogWidth(0.5)
+        val d = maiProgressDialog(this)
         d.setText("Loading...")
-        d.showmai()
+        d.setCorner(100)
+        d.returnDialog().show()
+
 
     }
 }

@@ -43,7 +43,7 @@ public class maiProgressDialog {
     public void setCorner(int dp)
     {
         float scale = context.getResources().getDisplayMetrics().scaledDensity;
-        int mTextSizeP = (int) (dp / scale);
+        float mTextSizeP = (dp / scale);
         GradientDrawable shape = (GradientDrawable) view2.findViewById(R.id.layoutCorner).getBackground();
         shape.setCornerRadius(mTextSizeP);
     }
