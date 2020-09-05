@@ -6,6 +6,7 @@
 # Setup
 Add it in your root build.gradle at the end of repositories:
 ```
+
 allprojects {
 		repositories {
 			...
@@ -26,14 +27,24 @@ dependencies {
 ### Simple
 * kotlin
 ```
+
 val d = maiProgressDialog(this).returnDialog()
 d.show()
 
 ```
+* Java
+```
+
+Dialog d = new maiProgressDialog(this).returnDialog();
+d.show();
+	
+```
+When you want to close. use **d.dismiss()**
 
 ### Custom
-* kotlin
+* Kotlin
 ```
+
 val d = maiProgressDialog(this)
         d.setCorner(30)
         d.setText("LOL")
@@ -44,4 +55,17 @@ val dialog = d.returnDialog()
 dialog.show()
         
 ```
-When you want to close. use dialog.dismiss()
+* Java
+```
+
+maiProgressDialog d= new maiProgressDialog(this);
+        d.setCorner(30);
+        d.setText("LOL");
+        d.setTextColor(R.color.colorAccent);
+        d.setDialogWidth(0.9);
+        d.setColorDialog(R.color.colorPrimary);
+        Dialog dialog = d.returnDialog();
+        dialog.show();
+	
+```
+When you want to close. use **dialog.dismiss()**
