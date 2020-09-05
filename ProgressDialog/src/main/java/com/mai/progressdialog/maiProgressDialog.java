@@ -2,23 +2,24 @@ package com.mai.progressdialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ProgressDialog {
+public class maiProgressDialog {
     private Dialog dialog;
     private View view2;
     private int width=0;
     private Context context;
-    private LayoutInflater inflater;
-    public ProgressDialog(Context context, LayoutInflater inflater) {
+    public maiProgressDialog(Context context) {
         this.context = context;
-        this.inflater = inflater;
-        view2 = inflater.inflate(R.layout.progress_dialog, null);
+        this.view2 = LayoutInflater.from(context).inflate(R.layout.progress_dialog, null);
         dialog = new Dialog(context);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setContentView(view2);
@@ -38,5 +39,17 @@ public class ProgressDialog {
     {
         TextView t = view2.findViewById(R.id.textbar);
         t.setText(str);
+    }
+    public void setCorner(int dp)
+    {
+        float scale = context.getResources().getDisplayMetrics().scaledDensity;
+        int mTextSizeP = (int) (dp / scale);
+        GradientDrawable shape = (GradientDrawable) view2.findViewById(R.id.layoutCorner).getBackground();
+        shape.setCornerRadius(mTextSizeP);
+    }
+    public void setColorDialog(int color)
+    {
+        GradientDrawable shape = (GradientDrawable) view2.findViewById(R.id.layoutCorner).getBackground();
+        shape.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
     }
 }
