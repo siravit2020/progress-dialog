@@ -45,6 +45,11 @@ public class maiProgressDialog {
         TextView t = view2.findViewById(R.id.textbar);
         t.setText(str);
     }
+    public void setTextColor(int color)
+    {
+        TextView t = view2.findViewById(R.id.textbar);
+        t.setTextColor(ContextCompat.getColor(context,color));
+    }
     public void setCorner(int dp)
     {
         float twelveDp = TypedValue.applyDimension( TypedValue.COMPLEX_UNIT_DIP, dp,
