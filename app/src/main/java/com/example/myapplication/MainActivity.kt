@@ -13,8 +13,9 @@ class MainActivity : AppCompatActivity() {
         val d = maiProgressDialog(this)
 
         d.setText("Loading..ff.")
-        d.setCorner(5)
-        d.setColorDialog(R.color.colorPrimary)
+        d.setTextColor(R.color.colorPrimaryDark)
+        d.setCorner(15)
+       // d.setColorDialog(R.color.colorPrimary)
         d.returnDialog().show()
 
 
