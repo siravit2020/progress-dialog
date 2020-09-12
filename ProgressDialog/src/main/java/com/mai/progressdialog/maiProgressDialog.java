@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.view.ViewCompat;
 
 public class maiProgressDialog {
     private Dialog dialog;
@@ -59,10 +60,12 @@ public class maiProgressDialog {
     }
     public void setColorDialog(int color)
     {
-        GradientDrawable shape = (GradientDrawable) view2.findViewById(R.id.layoutCorner).getBackground();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+       // GradientDrawable shape = (GradientDrawable) view2.findViewById(R.id.layoutCorner).getBackground();
+        //view2.findViewById(R.id.layoutCorner).setBackgroundTintList(context.getResources().getColorStateList(R.color.colorAccent));
+        ViewCompat.setBackgroundTintList(view2.findViewById(R.id.layoutCorner), ContextCompat.getColorStateList(context, color));
+     /*   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             shape.setTint(ContextCompat.getColor(context, color));
-        }
+        }*/
         //shape.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
     }
 }
