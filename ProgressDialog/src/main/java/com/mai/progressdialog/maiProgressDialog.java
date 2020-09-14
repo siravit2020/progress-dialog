@@ -46,6 +46,13 @@ public class maiProgressDialog {
         TextView t = view2.findViewById(R.id.textbar);
         t.setText(str);
     }
+    public void setTextSize(int dp)
+    {
+        float twelveDp = TypedValue.applyDimension( TypedValue.COMPLEX_UNIT_DIP, dp,
+                context.getResources().getDisplayMetrics() );
+        TextView t = view2.findViewById(R.id.textbar);
+        t.setTextSize(twelveDp);
+    }
     public void setTextColor(int color)
     {
         TextView t = view2.findViewById(R.id.textbar);
