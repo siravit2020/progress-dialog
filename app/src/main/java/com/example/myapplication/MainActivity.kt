@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val d = ProgressDialogMai(this)
-        d.setText("LOL")
-        d.setColorDialog(R.color.colorPrimary)
-        val dialog = d.returnDialog()
+        d.setText("")
+        d.setDialogWidth(0)
+        val dialog = d.dialog()
         dialog.show()
 
     }

@@ -3,12 +3,14 @@ package com.mai.progressdialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
@@ -30,7 +32,6 @@ public class ProgressDialogMai {
         width = (int) (context.getResources().getDisplayMetrics().widthPixels * 0.8);
         dialog.getWindow().setLayout(width, LinearLayout.LayoutParams.WRAP_CONTENT);
     }
-
     public Dialog dialog() {
         return dialog;
     }
@@ -45,6 +46,10 @@ public class ProgressDialogMai {
     public void setDialogWidth(int size) {
         if(size == 0)
         dialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+    }
+    public void setColorProgress(int color){
+        ProgressBar p = view2.findViewById(R.id.progress);
+        p.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(context,color), android.graphics.PorterDuff.Mode.SRC_ATOP);
     }
 
     public void setText(String str) {
