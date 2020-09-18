@@ -19,7 +19,7 @@ Step 2. Add the dependency
 ```
 
 dependencies {
-	        implementation 'com.github.siravit2020:progress-dialog:1.1.5'
+	        implementation 'com.github.siravit2020:progress-dialog:1.2.1'
 	}
   
 ```
@@ -42,30 +42,55 @@ d.show();
 When you want to close. use **d.dismiss()**
 
 ### Custom
+
+##### setCorner(int)
+	defalut is 15
+##### setText(string)
+	default is "Loading..."
+##### setTextSize(int)
+##### setTextColor(int) 
+	color resource
+##### setDialogWidth(Double)
+	default 0.8
+	form 0.00 - 1.00
+	0.95 is 95 percent of the screen
+	If you want to use WRAP_CONTENT setDialogWidth(0)
+##### setColorDialog(int)
+	default color white
+	color resource
+##### setColorProgress(int)
+	default is the same color as colorAccent in your app
+	color resource
+
+
 * Kotlin
 ```
 
-val d = maiProgressDialog(this)
+val d = ProgressDialogMai(this)
         d.setCorner(30)
         d.setText("LOL")
-        d.setTextColor(R.color.colorAccent)
+        d.setTextColor(R.color.colorPrimary)
         d.setDialogWidth(0.9)
-        d.setColorDialog(R.color.colorPrimary)
-val dialog = d.returnDialog()
+        d.setTextSize(7)
+        d.setColorProgress(R.color.colorAccent)
+        d.setColorDialog(R.color.colorPrimaryDark)
+val dialog = d.dialog()
 dialog.show()
         
 ```
 * Java
 ```
 
-maiProgressDialog d= new maiProgressDialog(this);
-        d.setCorner(30);
-        d.setText("LOL");
-        d.setTextColor(R.color.colorAccent);
-        d.setDialogWidth(0.9);
-        d.setColorDialog(R.color.colorPrimary);
-        Dialog dialog = d.returnDialog();
-        dialog.show();
+ProgressDialogMai d= new ProgressDialogMai(this);
+        d.setCorner(30)
+        d.setText("LOL")
+        d.setTextColor(R.color.colorPrimary)
+        d.setDialogWidth(0.9)
+        d.setTextSize(7)
+        d.setColorProgress(R.color.colorAccent)
+        d.setColorDialog(R.color.colorPrimaryDark)
+Dialog dialog = d.dialog();
+dialog.show();
 	
 ```
 When you want to close. use **dialog.dismiss()**
