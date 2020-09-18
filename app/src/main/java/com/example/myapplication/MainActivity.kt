@@ -12,11 +12,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val d = maiProgressDialog(this)
         d.setText("LOL")
-
         d.setColorDialog(R.color.progress)
         val dialog = d.returnDialog()
         dialog.show()
-       // dialog.dismiss()
 
     }
 }
