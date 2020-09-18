@@ -31,13 +31,16 @@ public class ProgressDialogMai {
         dialog.getWindow().setLayout(width, LinearLayout.LayoutParams.WRAP_CONTENT);
     }
 
-    public Dialog returnDialog() {
+    public Dialog dialog() {
         return dialog;
     }
 
     public void setDialogWidth(Double size) {
-        width = (int) (context.getResources().getDisplayMetrics().widthPixels * size);
-        dialog.getWindow().setLayout(width, LinearLayout.LayoutParams.WRAP_CONTENT);
+        if(size > 0.0 && size < 1.0)
+        {
+            width = (int) (context.getResources().getDisplayMetrics().widthPixels * size);
+            dialog.getWindow().setLayout(width, LinearLayout.LayoutParams.WRAP_CONTENT);
+        }
     }
     public void setDialogWidth(int size) {
         if(size == 0)
