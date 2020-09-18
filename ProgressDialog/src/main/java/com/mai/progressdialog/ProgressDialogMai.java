@@ -58,7 +58,7 @@ public class ProgressDialogMai {
     }
 
     public void setTextSize(int dp) {
-        float twelveDp = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
+        int twelveDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
                 context.getResources().getDisplayMetrics());
         TextView t = view2.findViewById(R.id.textbar);
         t.setTextSize(twelveDp);
