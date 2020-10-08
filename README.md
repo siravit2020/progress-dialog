@@ -28,14 +28,14 @@ dependencies {
 * kotlin
 ```
 
-val d = maiProgressDialog(this).returnDialog()
+val d = ProgressDialogMai(this).dialog()
 d.show()
 
 ```
 * Java
 ```
 
-Dialog d = new maiProgressDialog(this).returnDialog();
+Dialog d = new ProgressDialogMai(this).dialog();
 d.show();
 	
 ```
